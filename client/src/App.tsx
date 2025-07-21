@@ -10,7 +10,6 @@ import Footer from './Components/Layout/Footer';
 import LoginPage from './Components/Login';
 import RegisterForm from './Components/Registration';
 import ServicesPage from './Components/Service';
-import DoctorForm from './Components/Forms/DoctorForm';
 import DoctorDashboard from './Components/Doctor/DoctorDashboard';
 import DoctorLogin from './Components/Doctor/DoctorLogin';
 
@@ -38,7 +37,7 @@ function App() {
         
         {/* Doctor-specific routes */}
         <Route path="/doctor/login" element={<DoctorLogin />} />
-        <Route path="/doctor/register" element={<DoctorForm />} />
+{/* <Route path="/doctor/register" element={<DoctorForm />} /> */}
         <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
         
         <Route path="*" element={<div style={{ padding: 20, color: "white" }}>404 - Page Not Found</div>} />

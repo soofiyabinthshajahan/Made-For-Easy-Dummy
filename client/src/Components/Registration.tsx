@@ -5,6 +5,8 @@ import UserTypeSelection from './UserTypeSelection';
 import PatientForm from './Forms/PatientForm';
 import HospitalForm from './Forms/HospitalForm';
 import SuccessPage from './SuccessPage';
+import DoctorForm from './Forms/DoctorForm/DoctorForm';
+
 import {
   Container,
   FormContainer,
@@ -60,6 +62,11 @@ const Registration: React.FC = () => {
           />
         );
       case 'doctor':
+        return(
+          <DoctorForm
+          onSubmit={handleFormSubmit}
+          />
+        )
       case 'pharmacy':
       case 'insurance':
       case 'diagnostic':
