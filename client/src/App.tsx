@@ -1,0 +1,50 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './Global.css';
+
+import HorizontalHeader from './Components/Header/Header';
+import Home from './Components/Home';
+import About from './Components/CeoMessage/CEOMessage';
+import ContactForm from './Components/Contact';
+import Footer from './Components/Layout/Footer';
+import LoginPage from './Components/Login';
+import RegisterForm from './Components/Registration';
+import ServicesPage from './Components/Service';
+import DoctorForm from './Components/Forms/DoctorForm';
+import DoctorDashboard from './Components/Doctor/DoctorDashboard';
+import DoctorLogin from './Components/Doctor/DoctorLogin';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <About />
+              <ServicesPage />
+              <ContactForm />
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<ServicesPage />} />
+        <Route path="/contact" element={<ContactForm />} />
+        <Route path="/registration" element={<RegisterForm />} />
+        <Route path="/signin" element={<LoginPage />} />
+        
+        {/* Doctor-specific routes */}
+        <Route path="/doctor/login" element={<DoctorLogin />} />
+        <Route path="/doctor/register" element={<DoctorForm />} />
+        <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+        
+        <Route path="*" element={<div style={{ padding: 20, color: "white" }}>404 - Page Not Found</div>} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
