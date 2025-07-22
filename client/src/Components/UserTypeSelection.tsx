@@ -150,6 +150,7 @@ const getIcon = (iconName: string) => {
     Activity,
     Camera,
     Zap
+
   };
   return icons[iconName as keyof typeof icons] || User;
 };
