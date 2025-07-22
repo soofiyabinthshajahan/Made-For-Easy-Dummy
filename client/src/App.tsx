@@ -5,13 +5,13 @@ import './Global.css';
 import HorizontalHeader from './Components/Header/Header';
 import Home from './Components/Home';
 import About from './Components/CeoMessage/CEOMessage';
-import ContactForm from './Components/Contact';
+import ContactForm from './Components/Contact/Contact';
 import Footer from './Components/Layout/Footer';
-import LoginPage from './Components/Login';
+import LoginPage from './Components/Login/Login';
 import RegisterForm from './Components/Registration';
-import ServicesPage from './Components/Service';
-import DoctorDashboard from './Components/Doctor/DoctorDashboard';
-import DoctorLogin from './Components/Doctor/DoctorLogin';
+import ServicesPage from './Components/Service/Service';
+import DoctorDashboard from './Components/Doctor/DoctorDashboard/DoctorDashboard';
+import DoctorLogin from './Components/Doctor/DoctorLogin/DoctorLogin';
 
 function App() {
   return (
