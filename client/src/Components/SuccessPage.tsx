@@ -118,7 +118,8 @@ const getUserTypeLabel = (type: UserType): string => {
     insurance: 'Insurance Provider',
     diagnostic: 'Diagnostic Center',
     imaging: 'Imaging Center',
-    radiology: 'Radiology Center'
+    radiology: 'Radiology Center',
+    laboratory:'Laboratory'
   };
   return labels[type];
 };

@@ -5,6 +5,7 @@ import PatientForm from './Forms/PatientForm/PatientForm';
 import HospitalForm from './Forms/HospitalForm/HospitalForm';
 import SuccessPage from './SuccessPage';
 import DoctorForm from './Forms/DoctorForm/DoctorForm';
+import LaboratoryForm from './Forms/LaboratoryForm/LaboratoryForm';
 
 import {
   Container,
@@ -101,6 +102,13 @@ const Registration: React.FC = () => {
       case 'radiology':
          return(
           <PharmacyForm
+          onSubmit={handleFormSubmit}
+           onBack={handleBackToSelection}
+          />
+        )
+        case 'laboratory':
+         return(
+          <LaboratoryForm
           onSubmit={handleFormSubmit}
            onBack={handleBackToSelection}
           />

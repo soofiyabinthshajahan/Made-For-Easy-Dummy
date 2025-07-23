@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { HospitalFormData } from '../../Types/Registration';
 import FormHeader from '../../Shared/FormHeader';
 import HospitalDashboard from '../../Hospital/HospitalDashboard';
+import { useNavigate } from 'react-router-dom';
 import HospitalStep1 from './HospitalStep1';
 import HospitalStep2 from './HospitalStep2';
 
@@ -11,6 +12,7 @@ interface HospitalFormProps {
 }
 
 const HospitalForm: React.FC<HospitalFormProps> = ({ onSubmit, onBack }) => {
+  const navigate=useNavigate()
   const [currentStep, setCurrentStep] = useState(1);
   const [showDashboard, setShowDashboard] = useState(false);
   const [formData, setFormData] = useState<HospitalFormData>({
@@ -74,12 +76,13 @@ const HospitalForm: React.FC<HospitalFormProps> = ({ onSubmit, onBack }) => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (validateStep(2)) {
-      setShowDashboard(true);
-      onSubmit(formData);
-    }
-  };
+  e.preventDefault();
+  if (validateStep(2)) {
+    onSubmit(formData);
+    setShowDashboard(true);  // This will show the dashboard
+    // Remove the navigate call
+  }
+};
 
   const handleLogout = () => {
     setShowDashboard(false);

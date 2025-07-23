@@ -137,6 +137,13 @@ const userTypeConfigs: UserTypeConfig[] = [
     description: 'Register your radiology center to offer specialized radiology services and interpretations.',
     icon: 'Zap',
     color: 'rgba(132, 204, 22, 0.2)'
+  },
+   {
+    type: 'laboratory',
+    title: 'Laboratory',
+    description: 'Register your radiology center to offer specialized radiology services and interpretations.',
+    icon: 'Zap',
+    color: 'rgba(132, 204, 22, 0.2)'
   }
 ];
 
@@ -149,7 +156,8 @@ const getIcon = (iconName: string) => {
     Shield,
     Activity,
     Camera,
-    Zap
+    Zap, 
+    
 
   };
   return icons[iconName as keyof typeof icons] || User;
