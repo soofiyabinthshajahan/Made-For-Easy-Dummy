@@ -6,7 +6,9 @@ export type UserType =
   | 'insurance' 
   | 'diagnostic' 
   | 'imaging' 
+  | 'laboratory'
   | 'radiology';
+   
 
 export interface BaseFormData {
   firstName: string;
@@ -94,6 +96,15 @@ export interface RadiologyFormData extends BaseFormData {
   emergencyServices: boolean;
 }
 
+export interface LaboratoryFormData extends BaseFormData {
+  centerName: string;
+  licenseNumber: string;
+  radiologyServices: string[];
+  certifiedRadiologists: string;
+  equipmentYear: string;
+  emergencyServices: boolean;
+}
+
 export type FormData = 
   | PatientFormData 
   | HospitalFormData 
@@ -102,7 +113,9 @@ export type FormData =
   | InsuranceFormData 
   | DiagnosticFormData 
   | ImagingFormData 
-  | RadiologyFormData;
+  | RadiologyFormData
+  |LaboratoryFormData
+  
 
 export interface UserTypeConfig {
   type: UserType;
