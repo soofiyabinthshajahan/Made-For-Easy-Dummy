@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { UserType, FormData } from './Types/Registration';
 import UserTypeSelection from './UserTypeSelection';
-import PatientForm from './Forms/PatientForm';
-import HospitalForm from './Forms/HospitalForm';
+import PatientForm from './Forms/PatientForm/PatientForm';
+import HospitalForm from './Forms/HospitalForm/HospitalForm';
 import SuccessPage from './SuccessPage';
 import DoctorForm from './Forms/DoctorForm/DoctorForm';
 
@@ -12,6 +11,10 @@ import {
   FormContainer,
   SelectionContainer
 } from './Shared/StyledComponents';
+import PharmacyForm from './Forms/PharmacyForm/PharmacyForm';
+import InsuranceForm from './Forms/InsuranceForm/InsuranceForm';
+import DiagnosticForm from './Forms/DiagonisticForm/DiagonisticForm';
+import ImagingForm from './Forms/ImagingForm/ImagingForm';
 
 const Registration: React.FC = () => {
   const [selectedUserType, setSelectedUserType] = useState<UserType | null>(null);
@@ -68,11 +71,44 @@ const Registration: React.FC = () => {
           />
         )
       case 'pharmacy':
+         return(
+          <PharmacyForm
+          onSubmit={handleFormSubmit}
+           onBack={handleBackToSelection}
+          />
+        )
       case 'insurance':
+         return(
+          <InsuranceForm
+          onSubmit={handleFormSubmit}
+           onBack={handleBackToSelection}
+          />
+        )
       case 'diagnostic':
+         return(
+          <DiagnosticForm
+          onSubmit={handleFormSubmit}
+           onBack={handleBackToSelection}
+          />
+        )
       case 'imaging':
+         return(
+          <ImagingForm
+          onSubmit={handleFormSubmit}
+           onBack={handleBackToSelection}
+          />
+        )
       case 'radiology':
+         return(
+          <PharmacyForm
+          onSubmit={handleFormSubmit}
+           onBack={handleBackToSelection}
+          />
+        )
+        
         return (
+          
+        
           <div style={{ padding: '2rem', width: '100%', textAlign: 'center', color: 'white' }}>
             <h2>Form Coming Soon</h2>
             <p>The {selectedUserType} registration form is under development.</p>
@@ -91,6 +127,7 @@ const Registration: React.FC = () => {
               Back to Selection
             </button>
           </div>
+          
         );
       default:
         return null;
@@ -131,6 +168,7 @@ const Registration: React.FC = () => {
         </FormContainer>
       )}
     </Container>
+    
   );
 };
 
