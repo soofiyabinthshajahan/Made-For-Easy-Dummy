@@ -12,6 +12,8 @@ import RegisterForm from './Components/Registration';
 import ServicesPage from './Components/Service/Service';
 import DoctorDashboard from './Components/Doctor/DoctorDashboard/DoctorDashboard';
 import DoctorLogin from './Components/Doctor/DoctorLogin/DoctorLogin';
+import LaboratoryDashboard from './Components/LaboratoryDashboard/LaboratoryDashboard';
+import HospitalDashboard from './Components/Hospital/HospitalDashboard';
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
         <Route path="/doctor/login" element={<DoctorLogin />} />
 {/* <Route path="/doctor/register" element={<DoctorForm />} /> */}
         <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+        <Route path='/laboratory/dashboard'element={<LaboratoryDashboard/>}/>
+        
         
         <Route path="*" element={<div style={{ padding: 20, color: "white" }}>404 - Page Not Found</div>} />
       </Routes>
