@@ -14,6 +14,7 @@ import DoctorDashboard from './Components/Doctor/DoctorDashboard/DoctorDashboard
 import DoctorLogin from './Components/Doctor/DoctorLogin/DoctorLogin';
 import LaboratoryDashboard from './Components/LaboratoryDashboard/LaboratoryDashboard';
 import HospitalDashboard from './Components/Hospital/HospitalDashboard';
+import PatientDashboard from './Components/Patient/PatientDashboard';
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
 {/* <Route path="/doctor/register" element={<DoctorForm />} /> */}
         <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
         <Route path='/laboratory/dashboard'element={<LaboratoryDashboard/>}/>
-        
+        <Route path='/patient'element={<PatientDashboard/>}/>
         
         <Route path="*" element={<div style={{ padding: 20, color: "white" }}>404 - Page Not Found</div>} />
       </Routes>
